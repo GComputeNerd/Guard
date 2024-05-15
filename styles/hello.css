@@ -182,3 +182,10 @@ option {
     font-size: 3.5em;
     color: black;
 }
+
+.sliderLabels {
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
