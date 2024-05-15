@@ -3,11 +3,30 @@ console.log(localStorage);
 
 if (localStorage.getItem('isSetup') === null) {
     localStorage.setItem('live_detection', -1);
+    localStorage.setItem('manual_sensitivity', 2);
+    localStorage.setItem('live_sensitivity', 2);
     live_det = -1;
+    manual_sens = 2;
+    live_sens = 2;
     localStorage.setItem('isSetup', 1);
 } else {
     live_det = localStorage.getItem('live_detection');
+    manual_sens = localStorage.getItem('manual_sensitivity');
+    live_sens = localStorage.getItem('live_sensitivity');
 }
+
+manualSlider = document.querySelector('.manualSlider');
+liveSlider = document.querySelector('.liveSlider');
+manualSlider.value = manual_sens;
+liveSlider.value = live_sens;
+
+manualSlider.addEventListener('input', () => {
+    localStorage.setItem('manual_sensitivity', manualSlider.value);
+});
+
+liveSlider.addEventListener('input', () => {
+    localStorage.setItem('live_sensitivity', liveSlider.value);
+});
 
 scan_btn = document.querySelector(".scanButton");
 
@@ -30,6 +49,8 @@ if (live_det == 1) {
     live_det = -1;
     toggle();
 }
+
+
 
 function scan() {
     resultText.innerHTML = "";

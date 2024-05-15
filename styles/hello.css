@@ -32,45 +32,6 @@ p {
     color: #FFFFFF;
 }
 
-.slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 83%;
-    height: 1.5em;
-    margin: 0;
-    background: #b5b0b0;
-    outline: none;
-    border-radius: 3%/50%;
-    opacity: 0.7;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1.25em;
-    height: 1.25em;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
-}
-
-datalist {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    writing-mode: vertical-lr;
-    width: 83%;
-}
-
-option {
-    display: block;
-    padding: 0;
-}
-
 .settingsIcon {
     position: fixed;
     display: block;
@@ -188,6 +149,27 @@ option {
     opacity: 0.9;
 }
 
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 83%;
+    height: 1.5em;
+    margin: 0;
+    background: #a9a9a9;
+    outline: none;
+    border-radius: 3%/50%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
 .sliderLabels {
     width: 83%;
     display: flex;
@@ -195,4 +177,7 @@ option {
     align-items: center;
 }
 
-/* .sliderLabels span {} */
+.sliderLabels span {
+    font-family: K2D-Italic;
+    color: #FFFFFF;
+}
