@@ -74,6 +74,8 @@ function openSettings() {
     settingsBox.style.display = 'flex';
     tlIcon.src = 'res/close.png';
     tlIcon.onclick = closeSettings;
+    tlIcon.classList.add('closeIcon');
+    tlIcon.classList.remove('settingsIcon');
 }
 
 function closeSettings() {
@@ -81,6 +83,8 @@ function closeSettings() {
     settingsBox.style.display = 'None';
     tlIcon.src = 'res/settings.png';
     tlIcon.onclick = openSettings;
+    tlIcon.classList.add('settingsIcon');
+    tlIcon.classList.remove('closeIcon');
 }
 
 scan_btn.onclick = scan;   

@@ -32,11 +32,41 @@ p {
     color: #FFFFFF;
 }
 
-.tlIcon {
+input[type="range"] {
+    width: 83%;
+    margin: 0;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 83%;
+}
+
+option {
+    display: block;
+    padding: 0;
+}
+
+.settingsIcon {
     position: fixed;
     display: block;
     height: 4em;
     width: 4em;
+}
+
+.closeIcon {
+    position: fixed;
+    display: block;
+    height: 2.5em;
+    width: 2.5em;
+    margin: 0.7em;
+}
+
+.tlIcon {
+    transition: none;
 }
 
 .tlIcon:hover {
