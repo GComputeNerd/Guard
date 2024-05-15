@@ -14,6 +14,10 @@ scanButton = document.querySelector(".scanButton");
 scanHint = document.querySelector(".scanHint");
 resultText = document.querySelector(".resultText");
 
+mainScanBox = document.querySelector(".mainScanBox");
+settingsBox = document.querySelector(".settingsBox");
+tlIcon = document.querySelector(".tlIcon");
+
 function scan() {
     resultText.innerHTML = "";
     scanMain.src = "res/loading-1.gif";
@@ -47,5 +51,20 @@ function toggle() {
     live_det = !live_det;
 }
 
+function openSettings() {
+    mainScanBox.style.display = 'None';
+    settingsBox.style.display = 'flex';
+    tlIcon.src = 'res/close.png';
+    tlIcon.onclick = closeSettings;
+}
+
+function closeSettings() {
+    mainScanBox.style.display = 'flex';
+    settingsBox.style.display = 'None';
+    tlIcon.src = 'res/settings.png';
+    tlIcon.onclick = openSettings;
+}
+
 scan_btn.onclick = scan;   
 toggleMain.onclick = toggle;
+tlIcon.onclick = openSettings;

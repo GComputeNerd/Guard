@@ -58,6 +58,13 @@ p {
     align-items: center;
 }
 
+.settingsBox {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .scanButton {
     display: flex;
     justify-content: center;
