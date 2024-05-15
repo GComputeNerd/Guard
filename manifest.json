@@ -1,0 +1,31 @@
+{
+    "manifest_version":3,
+    "version":"1.0",
+    "name":"Guard",
+    "content_scripts":[
+        {
+         "matches":["<all_urls>"],
+         "js":["scripts/main.js"]
+        }
+      ],
+    "web_accessible_resources": [
+        {
+            "resources": ["res/a.jpg"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "icons": {
+        "48": "res/shield-48.png",
+        "96": "res/shield-96.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "res/shield-19.png",
+            "38": "res/shield-38.png"
+        }
+    },
+    "action": {
+        "default_popup": "hello.html",
+        "default_icon": "res/shield.png"
+    }
+  }
