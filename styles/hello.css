@@ -8,6 +8,8 @@
     src: url('/fonts/K2D-ThinItalic.ttf');
 }
 
+@keyframes turnOn { 100% { transform: translateX(2em); } }
+@keyframes turnOff { 100% { transform: translateX(-0.5em); } }
 body {
     background-color: #00897B;
     width: 26em;
@@ -33,6 +35,10 @@ p {
     display: block;
     height: 4em;
     width: 4em;
+}
+
+.tlIcon:hover {
+    cursor: pointer;
 }
 
 .scanHint {
@@ -68,4 +74,46 @@ p {
     display: block;
     width: 70%;
     height: 70%;
+}
+
+.liveDetection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    width: 5em;
+    height: 3em;
+    margin-left: 1em;
+    border-radius: 30%/50%;
+    background-color: #546E7A;
+    cursor: pointer;
+    z-index: 0;
+    transition: background-color 300ms linear;
+}
+
+.toggleCircle {
+    width: 2em;
+    height: 2em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    transition: transform 0.7s;
+}
+
+.toggleBgCircle {
+    display: block;
+    z-index: 1;
+    width: 3em;
+    height: 3em;
+    background-color: #a9a8ae;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    transition: transform 0.7s;
 }
