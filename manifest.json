@@ -21,5 +21,8 @@
     "action": {
         "default_popup": "hello.html",
         "default_icon": "res/shield.png"
-    }
+    },
+    "permissions": [
+        "storage"
+    ]
   }
