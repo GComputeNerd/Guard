@@ -6,12 +6,31 @@ live_det = false;
 toggleMain = document.querySelector(".toggle");
 toggleElements = document.querySelectorAll(".toggle *");
 
-offColor = "#546E7A"
-onColor = "#42A5F5"
+offColor = "#546E7A";
+onColor = "#42A5F5";
 
-function test() {
-    alert("Hi");
+scanMain = document.querySelector(".scanButton img");
+scanButton = document.querySelector(".scanButton");
+scanHint = document.querySelector(".scanHint");
+resultText = document.querySelector(".resultText");
+
+function scan() {
+    resultText.innerHTML = "";
+    scanMain.src = "res/loading-1.gif";
+    scanButton.style.opacity = 0.75;
+    scanMain.style.display = 'block';
+    scanHint.innerHTML = "Scanning..";
+
+    setTimeout(() => {
+        result = Math.floor(Math.random() * 100);
+        console.log(result);
+        scanMain.style.display = 'None';
+        resultText.innerHTML = result + '%';
+        scanButton.style.opacity = 1;
+        scanHint.innerHTML = "Press To Scan";
+    },4000);
 }
+
 
 function toggle() {
     if (!live_det) {
@@ -28,5 +47,5 @@ function toggle() {
     live_det = !live_det;
 }
 
-scan_btn.onclick = test;   
+scan_btn.onclick = scan;   
 toggleMain.onclick = toggle;
