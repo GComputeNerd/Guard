@@ -109,13 +109,6 @@ option {
     align-items: center;
 }
 
-.settingsBox {
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
 .scanButton {
     display: flex;
     justify-content: center;
@@ -183,9 +176,23 @@ option {
     color: black;
 }
 
+.settingsBox {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settingsBox p {
+    font-size: 2em;
+    opacity: 0.9;
+}
+
 .sliderLabels {
     width: 83%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+/* .sliderLabels span {} */
