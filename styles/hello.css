@@ -10,16 +10,15 @@
 
 body {
     background-color: #00897B;
-    width: 20em;
-    margin: 2em;
+    width: 26em;
 }
 
 h1 {
     font-family: K2D;
     font-size: 59;
-    letter-spacing: 0.05em;
     color: #FFFFFF;
     margin: 0;
+    margin-top: 0.3em;
 }
 
 p {
@@ -27,6 +26,13 @@ p {
     font-size: 30;
     margin: 0;
     color: #FFFFFF;
+}
+
+.tlIcon {
+    position: fixed;
+    display: block;
+    height: 4em;
+    width: 4em;
 }
 
 .scanHint {
