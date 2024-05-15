@@ -1,7 +1,15 @@
 console.log('Extension is running');
+console.log(localStorage);
+
+if (localStorage.getItem('isSetup') === null) {
+    localStorage.setItem('live_detection', -1);
+    live_det = -1;
+    localStorage.setItem('isSetup', 1);
+} else {
+    live_det = localStorage.getItem('live_detection');
+}
 
 scan_btn = document.querySelector(".scanButton");
-live_det = false;
 
 toggleMain = document.querySelector(".toggle");
 toggleElements = document.querySelectorAll(".toggle *");
@@ -17,6 +25,11 @@ resultText = document.querySelector(".resultText");
 mainScanBox = document.querySelector(".mainScanBox");
 settingsBox = document.querySelector(".settingsBox");
 tlIcon = document.querySelector(".tlIcon");
+
+if (live_det == 1) {
+    live_det = -1;
+    toggle();
+}
 
 function scan() {
     resultText.innerHTML = "";
@@ -37,18 +50,23 @@ function scan() {
 
 
 function toggle() {
-    if (!live_det) {
+    console.log(live_det);
+    if (live_det == -1) {
+        console.log("A");
         for (et of toggleElements) {
             et.style.transform = "translateX(2em)";
             toggleMain.style.backgroundColor = onColor
         }
     } else {
+        console.log("HI");
         for (et of toggleElements) {
             et.style.transform = "translateX(-0.5em)";
             toggleMain.style.backgroundColor = offColor
         }
     }
-    live_det = !live_det;
+    live_det = -1*live_det;
+    console.log(live_det);
+    localStorage.setItem('live_detection', live_det);
 }
 
 function openSettings() {
