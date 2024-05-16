@@ -8,21 +8,41 @@
     src: url('/fonts/K2D-ThinItalic.ttf');
 }
 
+@font-face {
+    font-family: Roboto-Light;
+    src: url('/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Light Stories';
+    src: url('/fonts/Light\ Stories.ttf');
+}
+
 * {
     transition: all 300ms;
 }
 
 body {
-    background-color: #00897B;
+    /* background-color: #00897B; */
+    background-image: url("/res/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 26em;
+    height: 30em;
 }
 
 h1 {
-    font-family: K2D;
-    font-size: 59;
+    font-family: Roboto-Light;
+    font-size: 50;
     color: #FFFFFF;
     margin: 0;
-    margin-top: 0.3em;
+    opacity: 0.85;
+}
+
+h1 span {
+    font-family: 'Light Stories';
+    color: #1E88E5;
 }
 
 p {
@@ -33,14 +53,12 @@ p {
 }
 
 .settingsIcon {
-    position: fixed;
     display: block;
     height: 4em;
     width: 4em;
 }
 
 .closeIcon {
-    position: fixed;
     display: block;
     height: 2.5em;
     width: 2.5em;
@@ -48,10 +66,14 @@ p {
 }
 
 .tlIcon {
+    position: fixed;
+    top: 0.3em;
+    opacity: 0.7;
     transition: none;
 }
 
 .tlIcon:hover {
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -65,8 +87,9 @@ p {
 
 .MainScanBox {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    height: 100%;
     align-items: center;
 }
 
@@ -76,7 +99,9 @@ p {
     align-items: center;
     width: 12em;
     height: 12em;
-    background-color: #D9D9D9;
+    background-color: #D9D9D900;
+    border-style: solid;
+    border-color: #a9a8ae;
     border-radius: 100%;
 }
 
@@ -134,17 +159,20 @@ p {
 
 .resultText {
     font-size: 3.5em;
-    color: black;
+    color: #a9a8ae;
 }
 
 .settingsBox {
     display: none;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: 1.5em;
 }
 
 .settingsBox p {
+    margin-top: 0.2em;
     font-size: 2em;
     opacity: 0.9;
 }
@@ -153,11 +181,12 @@ p {
     -webkit-appearance: none;
     appearance: none;
     width: 83%;
-    height: 1.5em;
+    height: 0.25em;
     margin: 0;
-    background: #a9a9a9;
+    margin-top: 0.5em;
+    background: #546E7A;
     outline: none;
-    border-radius: 3%/50%;
+    border-radius: 1%/50%;
 }
 
 .slider::-webkit-slider-thumb {
@@ -166,11 +195,12 @@ p {
     width: 1.25em;
     height: 1.25em;
     border-radius: 50%;
-    background: #04AA6D;
+    background: #1976D2;
     cursor: pointer;
 }
 
 .sliderLabels {
+    margin-top: 0.35em;
     width: 83%;
     display: flex;
     justify-content: space-between;
