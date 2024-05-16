@@ -8,6 +8,12 @@
          "js":["scripts/demo.js"]
         }
       ],
+    "web_accessible_resources": [
+        {
+            "resources": ["static/flash.txt", "res/Guard_Text.png"],
+            "matches": ["<all_urls>"]
+        }
+    ],
     "icons": {
         "16": "res/guard-16.png",
         "32": "res/guard-32.png",

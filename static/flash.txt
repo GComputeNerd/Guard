@@ -1,0 +1,8 @@
+<div class="Guard-Flash-Body" 
+style="all:unset; display: flex;flex-direction: row;align-items: center;justify-content: center;
+width: 326.4px;height: 94.73px;background-color: #607D8B;padding: 0.2em;border-radius: 3%/8%;
+cursor: pointer; position: fixed; top: 0.75em; left: 0.75em;z-index:9999;"
+>
+    <img src="$IMG$" alt="Guard Logo" style="all:unset;width: 80px;line;margin: 0.1em 0.4em 0.1em 0.2em;">
+    <p style="all:unset;color: black; font-family: sans-serif;font-style: italic; font-size:12px;line-height:23px">This page has a $#$% deepfake rating. Take Caution processing the information on this page.</p>
+</div>

@@ -181,7 +181,7 @@ p {
     -webkit-appearance: none;
     appearance: none;
     width: 83%;
-    height: 0.25em;
+    height: 0.4em;
     margin: 0;
     margin-top: 0.5em;
     background: #546E7A;
@@ -200,7 +200,7 @@ p {
 }
 
 .sliderLabels {
-    margin-top: 0.35em;
+    margin-top: 0.4em;
     width: 83%;
     display: flex;
     justify-content: space-between;
