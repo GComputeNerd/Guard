@@ -9,7 +9,7 @@ if (localStorage.getItem('isSetup') === null) {
     manual_sens = 2;
     live_sens = 2;
     localStorage.setItem('isSetup', 1);
-    // chrome.storage.sync.set({'live_detection': -1});
+    chrome.storage.sync.set({'live_detection': -1});
 } else {
     live_det = localStorage.getItem('live_detection');
     manual_sens = localStorage.getItem('manual_sensitivity');
@@ -87,7 +87,7 @@ function toggle() {
     live_det = -1*live_det;
     console.log(live_det);
     localStorage.setItem('live_detection', live_det);
-    // chrome.storage.sync.set({'live_detection' : live_det})
+    chrome.storage.sync.set({'live_detection' : live_det})
 }
 
 function openSettings() {
