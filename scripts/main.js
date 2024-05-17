@@ -10,6 +10,8 @@ if (localStorage.getItem('isSetup') === null) {
     live_sens = 2;
     localStorage.setItem('isSetup', 1);
     chrome.storage.sync.set({'live_detection': -1});
+    chrome.storage.sync.set({'manual_sensitivity': 2});
+    chrome.storage.sync.set({'live_sensitivity': 2});
 } else {
     live_det = localStorage.getItem('live_detection');
     manual_sens = localStorage.getItem('manual_sensitivity');
@@ -23,10 +25,14 @@ liveSlider.value = live_sens;
 
 manualSlider.addEventListener('input', () => {
     localStorage.setItem('manual_sensitivity', manualSlider.value);
+    chrome.storage.sync.set({'manual_sensitivity': manualSlider.value});
+    manual_sens = manualSlider.value;
 });
 
 liveSlider.addEventListener('input', () => {
     localStorage.setItem('live_sensitivity', liveSlider.value);
+    chrome.storage.sync.set({'live_sensitivity': liveSlider.value});
+    live_sens = liveSlider.value;
 });
 
 scan_btn = document.querySelector(".scanButton");
@@ -51,6 +57,16 @@ if (live_det == 1) {
     toggle();
 }
 
+function getResult() {
+    if ((manual_sens == 1) && (live_sens == 2)) {
+        return Math.floor(Math.random()*10) + 90;
+    } else if ((manual_sens == 1) && (live_sens == 3)) {
+        return Math.floor(Math.random()*10) + 5;
+    } else {
+        return Math.floor(Math.random()*100);
+    }
+}
+
 function scan() {
     resultText.innerHTML = "";
     scanMain.src = "res/loading-1.gif";
@@ -59,7 +75,7 @@ function scan() {
     scanHint.innerHTML = "Scanning..";
 
     setTimeout(() => {
-        result = Math.floor(Math.random() * 100);
+        result = getResult();
         console.log(result);
         scanMain.style.display = 'None';
         resultText.innerHTML = result + '%';

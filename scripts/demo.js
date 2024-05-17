@@ -1,5 +1,7 @@
-chrome.storage.sync.get('live_detection', function(item) {
+chrome.storage.sync.get(["live_detection", "manual_sensitivity", "live_sensitivity"], function(item) {
     live_det = item.live_detection;
+    manual_sens = item.manual_sensitivity;
+    live_sens = item.live_sensitivity;
 
     if (live_det == 1) {
         setTimeout(()=> {
@@ -9,7 +11,13 @@ chrome.storage.sync.get('live_detection', function(item) {
 });
 
 function getReading() {
-    return Math.floor(Math.random() * 100);
+    if ((manual_sens == 1) && (live_sens == 2)) {
+        return Math.floor(Math.random()*10) + 90;
+    } else if ((manual_sens == 1) && (live_sens == 3)) {
+        return Math.floor(Math.random()*10) + 5;
+    } else {
+        return Math.floor(Math.random()*100);
+    }
 }
 
 function checkPercentage() {

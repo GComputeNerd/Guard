@@ -20,6 +20,7 @@
 
 * {
     transition: all 300ms;
+    caret-color: transparent;
 }
 
 body {
